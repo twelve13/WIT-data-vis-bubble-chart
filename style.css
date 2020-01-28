@@ -1,0 +1,28 @@
+body {
+	background-color: black;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+}
+
+header {
+	padding: 40px 10px;
+}
+
+header #title {
+	font-size: 48px;
+}
+
+#data-vis-container {
+	height: 800px;
+	width: 1200px;
+}
+
+.blurb {
+	font-size: 10px;
+	font-weight: normal;
+}

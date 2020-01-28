@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WIT Data Visualization</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<div id="title">Washington Improv Theater Annual Reports, 2017-2019</div>
+		<div>By Caroline Chen</div>
+	</header>
+	<main>
+		<div id="data-vis-container"></div>
+	</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-more.js"></script>
+	<script>
+		Highcharts.chart('data-vis-container', {
+			chart: {
+				type: 'packedbubble',
+				backgroundColor: 'black'
+			},
+			title: {
+				text: 'FY17-19 By the Numbers',
+				style: {
+					color: 'white'
+				}
+			},
+			legend : {
+				itemStyle: {
+					color: 'white'
+				}
+			},
+			tooltip: {
+				useHTML: true,
+				pointFormat: '<b>{point.name}: {point.value}<b><br><div class="blurb">{point.blurb}</div>'
+			},
+			plotOptions: {
+				packedbubble: {
+					minSize: '50%',
+					maxSize: '200%',
+					layoutAlgorithm: {
+						gravitationalConstant: 0.002
+					},
+					dataLabels: {
+						enabled: true,
+						format: '{point.nickname}',
+						style: {
+							color: 'white',
+							textOutline: 'none',
+							fontWeight: 'normal'
+						}
+					}
+				}
+			},
+			series: [
+				{
+					name: '2017',
+					color: '#eb404a',
+					data: [{
+						name: 'Individual Performances',
+						nickname: 'Shows',
+						value: 330
+					}, {
+						name: 'Harold Night Attendees',
+						nickname: 'Harold Attendees',
+						value: 6190,
+						blurb: ''
+					}, {
+						name: 'Total Performance Attendees',
+						nickname: 'Total Performance Attendees',
+						value: 23000
+					}, {
+						name: 'Improv for All Workshops',
+						nickname: 'I for All',
+						value: 50,
+						blurb: 'In FY17, WIT expanded the scope of its Improv For All workshops, which continue to reach every ward of DC.'
+					}, {
+						name: 'Improv for All Attendees',
+						nickname: 'Improv for All',
+						value: 720,
+						blurb: ''
+					}, {
+						name: 'Student Enrollments',
+						nickname: 'Students', 
+						value: 1545,
+						blurb: "Over the past three years, WIT's enrollments have increased by nearly 40% -- a testament to student satisfaction and positive word of mouth."
+					}, {
+						name: 'WIT@Work Training Participants',
+						nickname: 'WIT@Work',
+						value: 2000,
+						blurb: 'The program reached 2,000 participants from a wide variety of organizations including new clients like Discovery Communications and grocery chain Lidl.'
+					}, {
+						name: 'WIT@Work Traninigs Conducted',
+						nickname: 'W@W',
+						value: 60,
+						blurb: 'WIT dramatically increased its WIT@Work engagements from 38 trainings in FY16 to 60 in FY17 -- its biggest year of growth to date.'
+					}, {
+						name: 'Individual Donors',
+						nickname: 'Donors',
+						value: 389
+					}, {
+						name: 'DC Artists Involved',
+						nickname: 'DC Artists',
+						value: 350
+					}, {
+						name: 'Classes Offered',
+						nickname: 'Classes',
+						value: 133
+					}, {
+						name: 'Youth Served',
+						nickname: 'Youth',
+						value: 300,
+						blurb: 'With the assistance of a Creative Spark grant from the DC Commission on the Arts and Humanities, WIT provided improv workshops at schools such as Murch Elementary and Moten Elementary.'
+					}, {
+						name: 'Harold Teams',
+						nickname: 'Harold',
+						value: 7,
+						blurb: ''
+					}, {
+						name: 'Total Harold Players',
+						nickname: 'Harold',
+						value: 93,
+						blurb: 'Over the course of the year, the Harold team program featured 93 players, including 39 players new to the program.'
+					}]
+				}, 
+				{
+					name: '2018',
+					color: '#bccc28',
+					data: [{
+						name: 'Individual Performances',
+						nickname: 'Shows',
+						value: 351
+					}, {
+						name: 'Harold Night Attendees',
+						nickname: 'Harold Attendees',
+						value: 6945,
+						blurb: ''
+					}, {
+						name: 'Total Performance Attendees',
+						nickname: 'Total Performance Attendees',
+						value: 23468
+					}, {
+						name: 'Diversity Scholarship Recipients',
+						nickname: 'Scholarship',
+						value: 17,
+						blurb: "In total, 26 individuals have received WIT's diversity scholarship -- 6 of whom have successfully completed WIT's curriculum."
+					}, {
+						name: 'Improv for All workshops',
+						nickname: 'I for All',
+						value: 62,
+						blurb: "WIT's free two-hour Improv for All workshops reached every ward of the District in FY18 as well as venues in Maryland and Virginia.  Improviser Analia Gomez Vidal created a new series of Improv for All workshops designed specifically for participants who speak English as a second language."
+					}, {
+						name: 'Improv for All attendees',
+						nickname: 'Improv for All',
+						value: 1000,
+						blurb: ''
+					}, {
+						name: 'Student enrollments',
+						nickname: 'Students', 
+						value: 1618,
+						blurb: ''
+					}, {
+						name: 'WIT@Work Training Participants',
+						nickname: 'WIT@Work',
+						value: 2200,
+						blurb: "WIT@Work's new clients for FY18 included the Environmental Protection Agency, Pepco, Perkins+Will, and Brunswick PR."
+					}, {
+						name: 'Individual Donors',
+						nickname: 'Donors',
+						value: 495
+					}, {
+						name: 'Total Harold Players',
+						nickname: 'Harold',
+						value: 108,
+						blurb: ''
+					}]
+				},
+				{
+					name: '2019',
+					color: '#4ebba1',
+					data: [{
+						name: 'Individual Performances',
+						nickname: 'Shows',
+						value: 325
+					}, {
+						name: 'Harold Night Attendees',
+						nickname: 'Harold Attendees',
+						value: 6084,
+						blurb: 'More than 6,000 audience members came out to Harold Night in FY19.  Harold Night marked its ninth anniversary.'
+					}, {
+						name: 'Total Performance Attendees',
+						nickname: 'Total Performance Attendees',
+						value: 20590
+					}, {
+						name: 'Diversity Scholarship Recipients',
+						nickname: 'D.S.',
+						value: 13,
+						blurb: "In FY19, 24 individuals took classes on Diversity Scholarships, which offer students a 'full ride' through WIT's five-level curriculum."
+					}, {
+						name: 'Improv for All workshops',
+						nickname: 'I for All',
+						value: 90
+					}, {
+						name: 'Improv for All attendees',
+						nickname: 'Improv for All',
+						value: 1300,
+						blurb: "WIT's free two-hour Improv for All workshops reached every ward of the District in FY19 as well as venues in Maryland and Virginia."
+					}, {
+						name: 'Student enrollments',
+						nickname: 'Students', 
+						value: 1728,
+						blurb: 'With 485 students, the spring 2019 session marked a new enrollment record.'
+					}, {
+						name: 'WIT@Work Training Participants',
+						nickname: 'WIT@Work',
+						value: 2900,
+						blurb: 'FY19 was a record year for WIT@Work, brining improv to over 2,900 participants across 79 client engagements.'
+					}, {
+						name: 'WIT@Work Clients',
+						nickname: 'W@W',
+						value: 79,
+						blurb: "WIT@Work had a 25 percent growth in revenue, supporting WIT's overall growth and success."
+					}, {
+						name: 'Individual Donors',
+						nickname: 'Donors',
+						value: 611
+					}, {
+						name: 'Harold Teams',
+						nickname: 'Harold',
+						value: 10,
+						blurb: 'The Harold teams who took the stage were Captain PhD, Ghost Club, Heirloom, LIZARD GIRL, Oh That Baby, Out Sick, Ruth, The Lineup, Tiovivo, and Wonder Whale.'
+					},{
+						name: 'Total Harold Players',
+						nickname: 'Harold',
+						value: 104,
+						blurb: 'In FY19, 42 new players joined the Harold Team program, with 104 total players participating in the program in FY19.'
+					}]
+				}
+			]
+		})
+	</script>
+</body>
+</html>
